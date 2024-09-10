@@ -26,7 +26,7 @@
 data "aws_caller_identity" "current" {}
 
 module "resource_names" {
-  source = "git::https://github.com/nexient-llc/tf-module-resource_name.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-launch-module_library-resource_name.git?ref=1.0.0"
 
   for_each = var.resource_names_map
 
@@ -53,7 +53,7 @@ module "cloudwatch_log_group_wrapper" {
 }
 
 module "firehose_delivery_stream" {
-  source = "git::https://github.com/nexient-llc/tf-aws-module-firehose_delivery_stream?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-firehose_delivery_stream?ref=1.0.0"
 
   delivery_stream_name   = module.resource_names["delivery_stream"].standard
   http_endpoint_url      = var.http_endpoint_url
@@ -66,14 +66,14 @@ module "firehose_delivery_stream" {
 }
 
 module "s3_bucket" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-s3_bucket?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-s3_bucket?ref=1.0.0"
 
   naming_prefix     = var.naming_prefix
   enable_versioning = true
 }
 
 module "producer_role" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-iam_assumable_role.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-iam_assumable_role.git?ref=1.0.0"
 
   naming_prefix      = var.naming_prefix
   environment        = var.environment
@@ -106,7 +106,7 @@ data "aws_iam_policy_document" "producer_policy" {
 }
 
 module "consumer_role" {
-  source = "git::https://github.com/nexient-llc/tf-aws-wrapper_module-iam_assumable_role.git?ref=0.1.0"
+  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-iam_assumable_role.git?ref=1.0.0"
 
   naming_prefix      = var.naming_prefix
   environment        = var.environment

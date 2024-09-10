@@ -1,4 +1,4 @@
-# tf-aws-wrapper_module-cloudwatch_logs
+# tf-aws-module_collection-cloudwatch_logs
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
@@ -119,9 +119,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | git::https://github.com/nexient-llc/tf-aws-module-cloudwatch_log_group | 0.1.0 |
-| <a name="module_cloudwatch_log_stream"></a> [cloudwatch\_log\_stream](#module\_cloudwatch\_log\_stream) | git::https://github.com/nexient-llc/tf-aws-module-cloudwatch_log_stream | 0.1.0 |
-| <a name="module_cloudwatch_log_subscription_filter"></a> [cloudwatch\_log\_subscription\_filter](#module\_cloudwatch\_log\_subscription\_filter) | git::https://github.com/nexient-llc/tf-aws-module-cloudwatch_log_subscription_filter | 0.1.0 |
+| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_group | 1.0.0 |
+| <a name="module_cloudwatch_log_stream"></a> [cloudwatch\_log\_stream](#module\_cloudwatch\_log\_stream) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_stream | 1.0.0 |
+| <a name="module_cloudwatch_log_subscription_filter"></a> [cloudwatch\_log\_subscription\_filter](#module\_cloudwatch\_log\_subscription\_filter) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_subscription_filter | 1.0.0 |
 
 ## Resources
 
