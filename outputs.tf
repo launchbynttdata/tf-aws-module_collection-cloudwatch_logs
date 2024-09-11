@@ -19,3 +19,8 @@ output "cloudwatch_log_stream_arn" {
   value       = module.cloudwatch_log_stream[*].log_stream_arn
   description = "ARN of the cloudwatch log stream."
 }
+
+output "cloudwatch_log_group_name" {
+  value       = module.cloudwatch_log_group.log_group_name
+  description = "Name of the cloudwatch log group."
+}
