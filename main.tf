@@ -10,13 +10,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 module "cloudwatch_log_group" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_group?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_group/aws"
+  version = "~> 1.0"
 
   name = var.cloudwatch_log_group_name
 }
 
 module "cloudwatch_log_stream" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_stream?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_stream/aws"
+  version = "~> 1.0"
 
   count = var.create_cloudwatch_log_stream ? 1 : 0
 
@@ -27,7 +29,8 @@ module "cloudwatch_log_stream" {
 }
 
 module "cloudwatch_log_subscription_filter" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_subscription_filter?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_subscription_filter/aws"
+  version = "~> 1.0"
 
   count = var.create_cloudwatch_log_subscription_filter ? 1 : 0
 

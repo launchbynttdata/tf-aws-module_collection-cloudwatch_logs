@@ -108,8 +108,8 @@ If `make check` target is successful, developer is good to commit the code to pr
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0, <= 1.5.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.57.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 
 ## Providers
 
@@ -119,9 +119,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_group | 1.0.0 |
-| <a name="module_cloudwatch_log_stream"></a> [cloudwatch\_log\_stream](#module\_cloudwatch\_log\_stream) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_log_stream | 1.0.0 |
-| <a name="module_cloudwatch_log_subscription_filter"></a> [cloudwatch\_log\_subscription\_filter](#module\_cloudwatch\_log\_subscription\_filter) | git::https://github.com/launchbynttdata/tf-aws-module_primitive-cloudwatch_subscription_filter | 1.0.0 |
+| <a name="module_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#module\_cloudwatch\_log\_group) | terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_group/aws | ~> 1.0 |
+| <a name="module_cloudwatch_log_stream"></a> [cloudwatch\_log\_stream](#module\_cloudwatch\_log\_stream) | terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_log_stream/aws | ~> 1.0 |
+| <a name="module_cloudwatch_log_subscription_filter"></a> [cloudwatch\_log\_subscription\_filter](#module\_cloudwatch\_log\_subscription\_filter) | terraform.registry.launch.nttdata.com/module_primitive/cloudwatch_subscription_filter/aws | ~> 1.0 |
 
 ## Resources
 
@@ -146,4 +146,5 @@ No resources.
 |------|-------------|
 | <a name="output_cloudwatch_log_group_arn"></a> [cloudwatch\_log\_group\_arn](#output\_cloudwatch\_log\_group\_arn) | ARN of the cloudwatch log group. |
 | <a name="output_cloudwatch_log_stream_arn"></a> [cloudwatch\_log\_stream\_arn](#output\_cloudwatch\_log\_stream\_arn) | ARN of the cloudwatch log stream. |
+| <a name="output_cloudwatch_log_group_name"></a> [cloudwatch\_log\_group\_name](#output\_cloudwatch\_log\_group\_name) | Name of the cloudwatch log group. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
