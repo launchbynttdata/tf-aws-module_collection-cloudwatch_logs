@@ -22,6 +22,10 @@ func TestCloudWatchLogsComplete(t *testing.T, ctx types.TestContext) {
 	t.Run("TestingLogGroup", func(t *testing.T) {
 		checkLogGroup(t, ctx)
 	})
+
+	t.Run("TestingLogStream", func(t *testing.T) {
+		checkLogStream(t, ctx)
+	})
 }
 
 func checkARNFormat(t *testing.T, ctx types.TestContext) {
@@ -50,6 +54,22 @@ func checkLogGroup(t *testing.T, ctx types.TestContext) {
 
 	currentName := output.LogGroups[0].LogGroupName
 	assert.Equal(t, strings.Trim(expectedName, "[]"), *currentName, "Log group name doesn't match")
+}
+
+func checkLogStream(t *testing.T, ctx types.TestContext) {
+	client := GetCloudWatchClient(t)
+	groupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "cloudwatch_log_group_name")
+	expectedName := terraform.Output(t, ctx.TerratestTerraformOptions(), "cloudwatch_log_stream_name")
+
+	input := &cloudwatchlogs.DescribeLogStreamsInput{
+		LogGroupName: aws.String(strings.Trim(groupName, "[]")),
+	}
+
+	output, err := client.DescribeLogStreams(context.TODO(), input)
+	assert.NoError(t, err, "Failed to retrieve log stream from AWS")
+
+	currentName := *output.LogStreams[0].LogStreamName
+	assert.Equal(t, strings.Trim(expectedName, "[]"), currentName, "Log stream name doesn't match")
 }
 
 func GetAWSConfig(t *testing.T) (cfg aws.Config) {
