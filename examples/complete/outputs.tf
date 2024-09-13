@@ -24,3 +24,8 @@ output "cloudwatch_log_group_name" {
   value       = module.cloudwatch_log_group_wrapper[*].cloudwatch_log_group_name
   description = "Name of the cloudwatch log group."
 }
+
+output "cloudwatch_log_stream_name" {
+  value       = module.cloudwatch_log_group_wrapper[*].cloudwatch_log_stream_name
+  description = "Name of the cloudwatch log stream."
+}
